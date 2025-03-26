@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Menu, X, Bell, Search } from "lucide-react";
 import { myInfo } from "@/lib/data";

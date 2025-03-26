@@ -1,4 +1,3 @@
-
 export interface Project {
   id: string;
   title: string;
@@ -17,7 +16,7 @@ export interface ContentCategory {
 }
 
 export const myInfo = {
-  name: "SUMANTH SAMALA",
+  name: "USAMA HASSAN",
   role: "Software Engineer & Designer",
   bio: "Passionate about creating beautiful, functional, and user-centered digital experiences.",
   location: "San Francisco, CA",

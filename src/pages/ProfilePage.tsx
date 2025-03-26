@@ -113,7 +113,7 @@ const ProfilePage = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm px-12 py-4">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold">
-              <span className="text-red-600">S</span>UMANTH SAMALA
+              <span className="text-red-600">USAMA</span> HASSAN
             </div>
             <div className="flex space-x-6 items-center">
               <a href="#home" className="hover:text-red-600 transition-colors">Home</a>
@@ -145,7 +145,7 @@ const ProfilePage = () => {
           <section id="home" className="relative h-screen pt-24 z-10">
             <div className="px-12 h-full flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-sm">
-                Sumanth Samala - <span className="text-red-600">Senior ROR Developer</span>
+                Usama Hassan - <span className="text-red-600"> WEB  DEVELOPER.</span>
               </h1>
               <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
                 Dynamic and results-driven Senior Software Engineer with 5+ years in full-stack development across high-impact, large-scale applications. I bring expertise in Ruby on Rails, React, Node, AWS, Kubernetes, and Docker, with a passion for optimizing systems to scale. I've led initiatives serving 10,000+ users and managing 50 million+ bookings, driving feature-rich integrations like chat, video consultations, and API linkups. A recent achievement was implementing robust security measures across four NHSPS products, including XSS script validation in both frontend and backend, advanced password policies with the Devise gem, and stringent password resets every six months. Additionally, I transformed a legacy reporting engine into a high-speed microservices architecture, reducing report generation from 5 minutes to 5 seconds and delivering real-time insights for users.
