@@ -29,9 +29,9 @@ const ProfilePage = () => {
       case "developer":
         return "https://assets.mixkit.co/videos/preview/mixkit-hands-typing-on-a-keyboard-in-the-dark-29449-large.mp4";
       case "stalker":
-        return "https://assets.mixkit.co/videos/preview/mixkit-beautiful-nature-landscape-2119-large.mp4";
+        return "/video/stalker-background.mp4";
       case "adventurer":
-        return "https://assets.mixkit.co/videos/preview/mixkit-creative-hands-of-a-person-painting-a-colorful-picture-42296-large.mp4";
+        return "/video/adventurer-background.mp4";
       default:
         return "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-at-night-11748-large.mp4";
     }
@@ -217,14 +217,411 @@ const ProfilePage = () => {
     );
   }
 
+  // For Developer profile specifically - use the custom layout
+  else if (profileType?.toLowerCase() === 'developer') {
+    return (
+      <div className="min-h-screen bg-netflix-black text-white">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm px-12 py-4">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold">
+              <span className="text-red-600">U</span>SAMA HASSAN
+            </div>
+            <div className="flex space-x-6 items-center">
+              <a href="#home" className="hover:text-red-600 transition-colors">Home</a>
+              <a href="#professional" className="hover:text-red-600 transition-colors">Professional</a>
+              <a href="#skills" className="hover:text-red-600 transition-colors">Skills</a>
+              <a href="#projects" className="hover:text-red-600 transition-colors">Projects</a>
+              <a href="#hire-me" className="hover:text-red-600 transition-colors">Hire Me</a>
+            </div>
+          </div>
+        </nav>
+
+        {/* Hero Section with Video Background */}
+        <div className="relative">
+          <div className="w-full h-screen absolute top-0 left-0 overflow-hidden">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover opacity-80"
+            >
+              <source src="/video/coding.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/50"></div>
+          </div>
+          
+          {/* Hero Content */}
+          <section id="home" className="relative h-screen pt-24 z-10">
+            <div className="px-12 h-full flex flex-col justify-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-sm">
+                Usama Hassan - <span className="text-red-600">Full Stack Developer</span>
+              </h1>
+              <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
+                Dynamic and results-driven Full Stack Developer with expertise in modern web technologies. Passionate about creating scalable solutions and delivering exceptional user experiences.
+              </p>
+              <div className="flex space-x-4">
+                <button className="bg-white text-black px-8 py-3 rounded-md flex items-center font-medium">
+                  <span className="mr-2">▶</span> Resume
+                </button>
+                <button className="bg-transparent border border-gray-600 hover:border-white text-white px-8 py-3 rounded-md font-medium">
+                  <span className="mr-2">ⓘ</span> LinkedIn
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Today's Top Picks Section */}
+        <section className="px-12 py-16">
+          <h2 className="text-3xl font-bold mb-8">Today's Top Picks for developer</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {[
+              { 
+                title: 'Skills', 
+                image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Projects', 
+                image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Certifications', 
+                image: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Experience', 
+                image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Recommendations', 
+                image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop' 
+              },
+            ].map((item) => (
+              <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                  <span className="text-white font-medium">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Continue Watching Section */}
+        <section className="px-12 py-16">
+          <h2 className="text-3xl font-bold mb-8">Continue Watching for developer</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {[
+              { 
+                title: 'Technical Blog', 
+                image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Open Source', 
+                image: 'https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Portfolio', 
+                image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Contact', 
+                image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=2071&auto=format&fit=crop' 
+              },
+            ].map((item) => (
+              <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                  <span className="text-white font-medium">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // For Stalker profile specifically - use the custom layout
+  else if (profileType?.toLowerCase() === 'stalker') {
+    return (
+      <div className="min-h-screen bg-netflix-black text-white">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm px-12 py-4">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold">
+              <span className="text-netflix-red">U</span>SAMA HASSAN
+            </div>
+            <div className="flex space-x-6 items-center">
+              <a href="#personal" className="hover:text-netflix-red transition-colors">Personal</a>
+              <a href="#hobbies" className="hover:text-netflix-red transition-colors">Hobbies</a>
+              <a href="#lifestyle" className="hover:text-netflix-red transition-colors">Lifestyle</a>
+              <a href="#interests" className="hover:text-netflix-red transition-colors">Interests</a>
+              <a href="#social" className="hover:text-netflix-red transition-colors">Social</a>
+            </div>
+          </div>
+        </nav>
+
+        {/* Hero Section */}
+        <div className="relative">
+          <div className="w-full h-screen absolute top-0 left-0 overflow-hidden">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover opacity-80"
+            >
+              <source src={getProfileBgVideo()} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/60"></div>
+          </div>
+
+          <section id="personal" className="relative h-screen pt-24 z-10">
+            <div className="px-12 h-full flex flex-col justify-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-lg">
+                The Personal Side of <span className="text-netflix-red">Usama Hassan</span>
+              </h1>
+              <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
+                Beyond the code and career, there's a person with unique interests and stories. 
+                A blend of creativity, curiosity, and passion shapes my world outside of tech.
+              </p>
+              <div className="flex space-x-4">
+                <button className="bg-netflix-red text-white px-8 py-3 rounded-md flex items-center font-medium hover:bg-red-700">
+                  <span className="mr-2">▶</span> Personal Blog
+                </button>
+                <button className="bg-transparent border border-netflix-gray hover:border-white text-white px-8 py-3 rounded-md font-medium">
+                  <span className="mr-2">ⓘ</span> Social Links
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Today's Top Picks Section */}
+        <section className="px-12 py-16 bg-netflix-black">
+          <h2 className="text-3xl font-bold mb-8">Today's Top Picks for stalker</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {[
+              { 
+                title: 'Travel Stories', 
+                image: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Photography', 
+                image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=2074&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Music Playlist', 
+                image: 'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Book Collection', 
+                image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2028&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Art Gallery', 
+                image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop' 
+              },
+            ].map((item) => (
+              <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                  <span className="text-white font-medium">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Continue Exploring Section */}
+        <section className="px-12 py-16">
+          <h2 className="text-3xl font-bold mb-8">Continue Exploring</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {[
+              { 
+                title: 'Daily Routine', 
+                image: 'https://images.unsplash.com/photo-1506485338023-6ce5f36692df?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Favorite Places', 
+                image: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Food Adventures', 
+                image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Hobbies', 
+                image: 'https://images.unsplash.com/photo-1472289065668-ce650ac443d2?q=80&w=2069&auto=format&fit=crop' 
+              },
+            ].map((item) => (
+              <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                  <span className="text-white font-medium">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  // For Adventurer profile specifically - use the custom layout
+  else if (profileType?.toLowerCase() === 'adventurer') {
+    return (
+      <div className="min-h-screen bg-netflix-black text-white">
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm px-12 py-4">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold">
+              <span className="text-netflix-red">U</span>SAMA HASSAN
+            </div>
+            <div className="flex space-x-6 items-center">
+              <a href="#adventures" className="hover:text-netflix-red transition-colors">Adventures</a>
+              <a href="#experiments" className="hover:text-netflix-red transition-colors">Experiments</a>
+              <a href="#challenges" className="hover:text-netflix-red transition-colors">Challenges</a>
+              <a href="#gallery" className="hover:text-netflix-red transition-colors">Gallery</a>
+              <a href="#stories" className="hover:text-netflix-red transition-colors">Stories</a>
+            </div>
+          </div>
+        </nav>
+
+        {/* Hero Section */}
+        <div className="relative">
+          <div className="w-full h-screen absolute top-0 left-0 overflow-hidden">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover opacity-100"
+            >
+              <source src={getProfileBgVideo()} type="video/mp4" />
+            </video>
+          </div>
+
+          <section id="adventures" className="relative h-screen pt-24 z-10">
+            <div className="px-12 h-full flex flex-col justify-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-xl">
+                Adventure Awaits with <span className="text-netflix-red">Usama Hassan</span>
+              </h1>
+              <p className="text-white text-lg max-w-3xl mb-8 text-shadow-lg">
+                Life is an experiment, and I'm the mad scientist. Join me on a journey through 
+                unconventional projects, wild ideas, and the occasional controlled chaos.
+              </p>
+              <div className="flex space-x-4">
+                <button className="bg-netflix-red text-white px-8 py-3 rounded-md flex items-center font-medium hover:bg-red-700">
+                  <span className="mr-2">▶</span> Latest Adventure
+                </button>
+                <button className="bg-transparent border border-white hover:border-netflix-red text-white px-8 py-3 rounded-md font-medium backdrop-blur-sm">
+                  <span className="mr-2">ⓘ</span> Adventure Map
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Today's Expeditions Section */}
+        <section className="px-12 py-16">
+          <h2 className="text-3xl font-bold mb-8">Today's Expeditions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+            {[
+              { 
+                title: 'Side Projects', 
+                image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Experiments', 
+                image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Challenges', 
+                image: 'https://images.unsplash.com/photo-1526749837599-b4eba9fd855e?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Adventures', 
+                image: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Innovation Lab', 
+                image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop' 
+              },
+            ].map((item) => (
+              <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                  <span className="text-white font-medium">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Continue The Journey Section */}
+        <section className="px-12 py-16">
+          <h2 className="text-3xl font-bold mb-8">Continue The Journey</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {[
+              { 
+                title: 'Latest Expedition', 
+                image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Innovation Hub', 
+                image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Project Lab', 
+                image: 'https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?q=80&w=2070&auto=format&fit=crop' 
+              },
+              { 
+                title: 'Next Quest', 
+                image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop' 
+              },
+            ].map((item) => (
+              <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                  <span className="text-white font-medium">{item.title}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   // For other profiles, use the standard layout
   return (
     <div className="bg-netflix-black min-h-screen relative">
       {/* Background Video */}
       <div className="fixed inset-0 z-0 overflow-hidden">
-        <div className="absolute inset-0 bg-netflix-black/60 z-10"></div>
+        {/* Reduce the overlay darkness for Adventurer profile */}
+        <div className={`absolute inset-0 ${
+          profileType?.toLowerCase() === 'adventurer' 
+            ? 'bg-netflix-black/30' // Less dark overlay for adventurer
+            : 'bg-netflix-black/60' // Default overlay for other profiles
+        } z-10`}></div>
         <video 
-          className="w-full h-full object-cover"
+          className={`w-full h-full object-cover ${
+            profileType?.toLowerCase() === 'adventurer'
+              ? 'opacity-90' // Higher opacity for adventurer video
+              : 'opacity-80' // Default opacity for other profiles
+          }`}
           autoPlay 
           loop 
           muted={muted}
