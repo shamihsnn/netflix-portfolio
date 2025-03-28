@@ -25,18 +25,18 @@ const ProfilePage = () => {
   const getProfileBgVideo = () => {
     switch (profileType?.toLowerCase()) {
       case "recruiter":
-        return "https://assets.mixkit.co/videos/preview/mixkit-business-team-having-a-meeting-in-the-office-1634-large.mp4";
+        return "/video/background.mp4";
       case "developer":
-        return "https://assets.mixkit.co/videos/preview/mixkit-hands-typing-on-a-keyboard-in-the-dark-29449-large.mp4";
+        return "/video/coding.mp4";
       case "stalker":
-        return "/video/stalker-background.mp4";
+        return "/video/stalker.mp4";
       case "adventurer":
         return "/video/adventurer-background.mp4";
       default:
-        return "https://assets.mixkit.co/videos/preview/mixkit-digital-animation-of-a-city-at-night-11748-large.mp4";
+        return "/video/default-background.mp4";
     }
   };
-
+  
   // Easter egg quote based on profile
   const getEasterEggQuote = () => {
     const quotes = [
@@ -110,108 +110,211 @@ const ProfilePage = () => {
     return (
       <div className="min-h-screen bg-netflix-black text-white">
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm px-12 py-4">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold">
-              <span className="text-red-600">USAMA</span> HASSAN
-            </div>
-            <div className="flex space-x-6 items-center">
-              <a href="#home" className="hover:text-red-600 transition-colors">Home</a>
-              <a href="#professional" className="hover:text-red-600 transition-colors">Professional</a>
-              <a href="#skills" className="hover:text-red-600 transition-colors">Skills</a>
-              <a href="#projects" className="hover:text-red-600 transition-colors">Projects</a>
-              <a href="#hire-me" className="hover:text-red-600 transition-colors">Hire Me</a>
-            </div>
-          </div>
-        </nav>
+       {/* Navigation */}
+<nav className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm px-12 py-4">
+  <div className="flex justify-between items-center">
+    <div className="netflix-logo-font">
+      <span className="text-netflix-red font-extrabold text-4xl tracking-tighter">USAMA</span>
+      {" "}  {" "}
+      <span className="text-white font-extrabold text-4xl tracking-tighter">HASSAN</span>
+    </div>
+    <div className="flex space-x-6 items-center">
+      <a href="#home" className="hover:text-netflix-red transition-colors">Home</a>
+      <a href="#professional" className="hover:text-netflix-red transition-colors">Professional</a>
+      <a href="#skills" className="hover:text-netflix-red transition-colors">Skills</a>
+      <a href="#projects" className="hover:text-netflix-red transition-colors">Projects</a>
+      <a href="#hire-me" className="hover:text-netflix-red transition-colors">Hire Me</a>
+    </div>
+  </div>
+</nav>
+
 
         {/* Hero Section with Background Video */}
         <div className="relative">
-          {/* This is a separate container for the video that only covers the hero section */}
           <div className="w-full h-screen absolute top-0 left-0 overflow-hidden">
             <video 
               autoPlay 
               loop 
               muted 
               playsInline 
-              className="w-full h-full object-cover opacity-80"
+              className="w-full h-full object-cover opacity-100"
             >
-              <source src="/video/background.mp4" type="video/mp4" />
+              <source src={getProfileBgVideo()} type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black/50"></div>
           </div>
           
           {/* Hero Content */}
           <section id="home" className="relative h-screen pt-24 z-10">
-            <div className="px-12 h-full flex flex-col justify-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-sm">
-                Usama Hassan - <span className="text-red-600"> WEB  DEVELOPER.</span>
-              </h1>
-              <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
-                Dynamic and results-driven Senior Software Engineer with 5+ years in full-stack development across high-impact, large-scale applications. I bring expertise in Ruby on Rails, React, Node, AWS, Kubernetes, and Docker, with a passion for optimizing systems to scale. I've led initiatives serving 10,000+ users and managing 50 million+ bookings, driving feature-rich integrations like chat, video consultations, and API linkups. A recent achievement was implementing robust security measures across four NHSPS products, including XSS script validation in both frontend and backend, advanced password policies with the Devise gem, and stringent password resets every six months. Additionally, I transformed a legacy reporting engine into a high-speed microservices architecture, reducing report generation from 5 minutes to 5 seconds and delivering real-time insights for users.
-              </p>
-              <div className="flex space-x-4">
-                <button className="bg-white text-black px-8 py-3 rounded-md flex items-center font-medium">
-                  <span className="mr-2">▶</span> Resume
-                </button>
-                <button className="bg-transparent border border-gray-600 hover:border-white text-white px-8 py-3 rounded-md font-medium">
-                  <span className="mr-2">ⓘ</span> LinkedIn
-                </button>
-              </div>
-            </div>
-          </section>
+  <div className="px-12 h-full flex flex-col justify-center">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-sm">
+      Usama Hassan - <span className="text-red-600"> WEB DEVELOPER.</span>
+    </h1>
+    <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
+      I'm a medical lab tech who's started dabbling in coding and AI. I've picked up some JavaScript—nothing fancy, just enough to tinker—and I'm hooked on how AI could shake up healthcare. Think better diagnostics, less guesswork, and maybe a little less coffee for me. If you're into tech, healthcare, or both, let's chat!
+    </p>
+    <div className="flex flex-wrap gap-4">
+      <a 
+        href="https://yellow-vin-17.tiiny.site" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="bg-white text-black px-8 py-3 rounded-md flex items-center font-medium hover:bg-gray-200 transition-all transform hover:-translate-y-1"
+      >
+        <span className="mr-2">▶</span> Resume
+      </a>
+      <a 
+        href="https://linkedin.com/in/usama-hsnn-532058331/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="group bg-gradient-to-r from-blue-700 to-blue-900 text-white px-8 py-3 rounded-md font-medium border border-blue-800 hover:border-blue-600 transition-all transform hover:-translate-y-1 flex items-center"
+      >
+        <svg 
+          className="w-5 h-5 mr-2 group-hover:animate-pulse" 
+          fill="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a 
+        href="https://github.com/shamihsnn" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="group bg-gradient-to-r from-gray-900 to-black text-white px-8 py-3 rounded-md font-medium border border-gray-700 hover:border-gray-500 transition-all transform hover:-translate-y-1 flex items-center"
+      >
+        <svg 
+          className="w-5 h-5 mr-2 group-hover:animate-pulse" 
+          fill="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
         </div>
 
-        {/* The rest of the content - No video background here */}
-        <div className="bg-netflix-black">
-          {/* Top Picks Section with real images */}
-          <section className="px-12 py-16">
-            <h2 className="text-3xl font-bold mb-8">Today's Top Picks for recruiter</h2>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-              {[
-                { title: 'Work Permit', image: '/lovable-uploads/27c510dc-dc9f-4470-a7b9-34279eb80bca.jpeg' },
-                { title: 'Skills', image: '/lovable-uploads/OIP.jpeg' },
-                { title: 'Experience', image: '/lovable-uploads/R.jpeg' },
-                { title: 'Certifications', image: '/lovable-uploads/download (1).jpeg' },
-                { title: 'Recommendations', image: '/lovable-uploads/OIP (1).jpeg' },
-              ].map((item) => (
-                <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
-                    <span className="text-white font-medium">{item.title}</span>
-                  </div>
-                </div>
-              ))}
+       {/* The rest of the content - No video background here */}
+<div className="bg-netflix-black">
+  {/* Top Picks Section with real images */}
+  <section className="px-12 py-16">
+    <h2 className="text-3xl font-bold mb-8">Today's Top Picks for recruiter</h2>
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      {[
+        { 
+          title: 'Work Permit', 
+          image: '/lovable-uploads/27c510dc-dc9f-4470-a7b9-34279eb80bca.jpeg',
+          link: 'https://linkedin.com/in/usama-hsnn-532058331/'
+        },
+        { 
+          title: 'Skills', 
+          image: '/lovable-uploads/OIP.jpeg',
+          link: 'https://linkedin.com/in/usama-hsnn-532058331/'
+        },
+        { 
+          title: 'Experience', 
+          image: '/lovable-uploads/R.jpeg',
+          link: 'https://linkedin.com/in/usama-hsnn-532058331/'
+        },
+        { 
+          title: 'Certifications', 
+          image: '/lovable-uploads/download (1).jpeg',
+          link: 'https://linkedin.com/in/usama-hsnn-532058331/'
+        },
+        { 
+          title: 'Recommendations', 
+          image: '/lovable-uploads/OIP (1).jpeg',
+          link: 'https://linkedin.com/in/usama-hsnn-532058331/'
+        },
+      ].map((item) => (
+        <a 
+          href={item.link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          key={item.title} 
+          className="aspect-video relative rounded-md overflow-hidden group card-hover"
+        >
+          <img 
+            src={item.image} 
+            alt={item.title} 
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+            <div className="w-full">
+              <span className="text-white font-medium block">{item.title}</span>
+              <div className="flex items-center mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <svg className="w-4 h-4 text-linkedin-blue mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span className="text-xs text-gray-300">View on LinkedIn</span>
+              </div>
             </div>
-          </section>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+
 
           {/* Continue Watching Section with real images */}
-          <section className="px-12 py-16">
-            <h2 className="text-3xl font-bold mb-8">Continue Watching for recruiter</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              {[
-                { title: 'Music', image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1470&auto=format&fit=crop' },
-                { title: 'Reading', image: 'https://images.unsplash.com/photo-1513001900722-370f803f498d?q=80&w=1374&auto=format&fit=crop' },
-                { title: 'Blogs', image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1472&auto=format&fit=crop' },
-                { title: 'Contact Me', image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1471&auto=format&fit=crop' },
-              ].map((item) => (
-                <div key={item.title} className="aspect-video relative rounded-md overflow-hidden group card-hover">
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
-                    <span className="text-white font-medium">{item.title}</span>
-                  </div>
-                </div>
-              ))}
+         {/* Continue Watching Section with real images */}
+<section className="px-12 py-16">
+  <h2 className="text-3xl font-bold mb-8">Continue Watching for recruiter</h2>
+  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    {[
+      { 
+        title: 'Music', 
+        image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1470&auto=format&fit=crop',
+        link: 'https://open.spotify.com/playlist/3scePqK5heddXZ5lxyiqck?si=lOE-8O8_QWWYDjmJRw6iJg'
+      },
+      { 
+        title: 'Reading', 
+        image: 'https://images.unsplash.com/photo-1513001900722-370f803f498d?q=80&w=1374&auto=format&fit=crop',
+        link: 'https://www.goodreads.com/friend/i?feature=friend-invite-url&invite_token=MGI4ZTYwMTktNzFiMy00YmM1LTk3Y2MtYjMwNmRmMjI2ZDRj'
+      },
+      { 
+        title: 'Blogs', 
+        image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1472&auto=format&fit=crop',
+        link: 'https://beryl-sprout-88a.notion.site/Model-Context-Protocol-MCP-The-AI-Connectivity-Revolution-1c4dd885068380c2bccdfc329715cb49'
+      },
+      { 
+        title: 'Contact Me', 
+        image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1471&auto=format&fit=crop',
+        link: 'mailto:usamahsnnn@gmail.com'
+      },
+    ].map((item) => (
+      <a 
+        href={item.link} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        key={item.title} 
+        className="aspect-video relative rounded-md overflow-hidden group card-hover cursor-pointer"
+      >
+        <img 
+          src={item.image} 
+          alt={item.title} 
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+          <div className="w-full">
+            <span className="text-white font-medium block">{item.title}</span>
+            <div className="flex items-center mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="h-0.5 w-6 bg-netflix-red mr-2"></div>
+              <span className="text-xs text-gray-300">View now</span>
             </div>
-          </section>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+
         </div>
       </div>
     );
@@ -245,33 +348,67 @@ const ProfilePage = () => {
               loop 
               muted 
               playsInline 
-              className="w-full h-full object-cover opacity-80"
+              className="w-full h-full object-cover opacity-100"
             >
-              <source src="/video/coding.mp4" type="video/mp4" />
+              <source src={getProfileBgVideo()} type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black/50"></div>
           </div>
           
-          {/* Hero Content */}
-          <section id="home" className="relative h-screen pt-24 z-10">
-            <div className="px-12 h-full flex flex-col justify-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-sm">
-                Usama Hassan - <span className="text-red-600">Full Stack Developer</span>
-              </h1>
-              <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
-                Dynamic and results-driven Full Stack Developer with expertise in modern web technologies. Passionate about creating scalable solutions and delivering exceptional user experiences.
-              </p>
-              <div className="flex space-x-4">
-                <button className="bg-white text-black px-8 py-3 rounded-md flex items-center font-medium">
-                  <span className="mr-2">▶</span> Resume
-                </button>
-                <button className="bg-transparent border border-gray-600 hover:border-white text-white px-8 py-3 rounded-md font-medium">
-                  <span className="mr-2">ⓘ</span> LinkedIn
-                </button>
-              </div>
-            </div>
-          </section>
-        </div>
+         {/* Hero Content */}
+<section id="home" className="relative h-screen pt-24 z-10">
+  <div className="px-12 h-full flex flex-col justify-center">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-sm">
+      Usama Hassan - <span className="text-red-600">Full Stack Developer</span>
+    </h1>
+    <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
+      Dynamic and results-driven Full Stack Developer with expertise in modern web technologies. Passionate about creating scalable solutions and delivering exceptional user experiences.
+    </p>
+    <div className="flex flex-wrap gap-4">
+      <a 
+        href="https://yellow-vin-17.tiiny.site" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="bg-white text-black px-8 py-3 rounded-md flex items-center font-medium hover:bg-gray-200 transition-all transform hover:-translate-y-1"
+      >
+        <span className="mr-2">▶</span> Resume
+      </a>
+      <a 
+        href="https://linkedin.com/in/usama-hsnn-532058331/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="group bg-gradient-to-r from-blue-700 to-blue-900 text-white px-8 py-3 rounded-md font-medium border border-blue-800 hover:border-blue-600 transition-all transform hover:-translate-y-1 flex items-center"
+      >
+        <svg 
+          className="w-5 h-5 mr-2 group-hover:animate-pulse" 
+          fill="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+      <a 
+        href="https://github.com/shamihsnn" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="group bg-gradient-to-r from-gray-900 to-black text-white px-8 py-3 rounded-md font-medium border border-gray-700 hover:border-gray-500 transition-all transform hover:-translate-y-1 flex items-center"
+      >
+        <svg 
+          className="w-5 h-5 mr-2 group-hover:animate-pulse" 
+          fill="currentColor" 
+          viewBox="0 0 24 24" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+</div>
+
 
         {/* Today's Top Picks Section */}
         <section className="px-12 py-16">
@@ -380,32 +517,69 @@ const ProfilePage = () => {
               loop 
               muted 
               playsInline 
-              className="w-full h-full object-cover opacity-80"
+              className="w-full h-full object-cover opacity-100"
             >
               <source src={getProfileBgVideo()} type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-black/60"></div>
           </div>
 
           <section id="personal" className="relative h-screen pt-24 z-10">
-            <div className="px-12 h-full flex flex-col justify-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-lg">
-                The Personal Side of <span className="text-netflix-red">Usama Hassan</span>
-              </h1>
-              <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
-                Beyond the code and career, there's a person with unique interests and stories. 
-                A blend of creativity, curiosity, and passion shapes my world outside of tech.
-              </p>
-              <div className="flex space-x-4">
-                <button className="bg-netflix-red text-white px-8 py-3 rounded-md flex items-center font-medium hover:bg-red-700">
-                  <span className="mr-2">▶</span> Personal Blog
-                </button>
-                <button className="bg-transparent border border-netflix-gray hover:border-white text-white px-8 py-3 rounded-md font-medium">
-                  <span className="mr-2">ⓘ</span> Social Links
-                </button>
-              </div>
-            </div>
-          </section>
+  <div className="px-12 h-full flex flex-col justify-center">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 text-shadow-lg">
+      The side of my <span className="text-netflix-red">STORY</span>
+    </h1>
+    <p className="text-white text-lg max-w-3xl mb-8 text-shadow-sm">
+      Beyond the code and career, there's a person with unique interests and stories. 
+      A blend of creativity, curiosity, and passion shapes my world outside of tech.
+    </p>
+    <div className="flex space-x-4">
+      <div className="relative group">
+        <button className="bg-netflix-red text-white px-8 py-3 rounded-md flex items-center font-medium hover:bg-red-700">
+          <span className="mr-2">▶</span> Personal Blog
+        </button>
+        <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-black bg-opacity-90 border border-netflix-gray transform scale-0 group-hover:scale-100 transition-transform duration-150 origin-top-left z-20">
+          <div className="py-2">
+            <a 
+              href="https://beryl-sprout-88a.notion.site/Model-Context-Protocol-MCP-The-AI-Connectivity-Revolution-1c4dd885068380c2bccdfc329715cb49" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block px-4 py-2 text-white hover:bg-netflix-red transition-colors duration-150"
+            >
+              AI Connectivity Revolution
+            </a>
+            <a 
+              href="https://beryl-sprout-88a.notion.site/Introduction-to-Python-1a9dd8850683802cabeafa92740d3757" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block px-4 py-2 text-white hover:bg-netflix-red transition-colors duration-150"
+            >
+              Introduction to Python
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative group">
+        <button className="bg-transparent border border-netflix-gray hover:border-white text-white px-8 py-3 rounded-md font-medium">
+          <span className="mr-2">ⓘ</span> Social Links
+        </button>
+        <div className="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-black bg-opacity-90 border border-netflix-gray transform scale-0 group-hover:scale-100 transition-transform duration-150 origin-top-left z-20">
+          <div className="py-2">
+            <a 
+              href="https://www.instagram.com/vedhika4u/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="block px-4 py-2 text-white hover:bg-netflix-red transition-colors duration-150"
+            >
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
         </div>
 
         {/* Today's Top Picks Section */}
@@ -610,16 +784,10 @@ const ProfilePage = () => {
     <div className="bg-netflix-black min-h-screen relative">
       {/* Background Video */}
       <div className="fixed inset-0 z-0 overflow-hidden">
-        {/* Reduce the overlay darkness for Adventurer profile */}
-        <div className={`absolute inset-0 ${
-          profileType?.toLowerCase() === 'adventurer' 
-            ? 'bg-netflix-black/30' // Less dark overlay for adventurer
-            : 'bg-netflix-black/60' // Default overlay for other profiles
-        } z-10`}></div>
         <video 
           className={`w-full h-full object-cover ${
-            profileType?.toLowerCase() === 'adventurer'
-              ? 'opacity-90' // Higher opacity for adventurer video
+            profileType?.toLowerCase() === 'adventurer' 
+              ? 'opacity-90' // Higher opacity for adventurer
               : 'opacity-80' // Default opacity for other profiles
           }`}
           autoPlay 
