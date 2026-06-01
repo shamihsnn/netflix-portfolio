@@ -1,69 +1,74 @@
-# Welcome to your Lovable project
+# Usama Hassan — Developer Portfolio
 
-## Project info
+> A Netflix-inspired developer portfolio with role-based profile selection and a hacker terminal aesthetic.
 
-**URL**: https://lovable.dev/projects/449bfe25-12c5-419d-8f0b-85ee10e802c5
+**Live Site → [usama-portfolio-site.vercel.app](https://usama-portfolio-site.vercel.app/)**
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Preview
 
-**Use Lovable**
+| Splash Screen | Profile Select | Portfolio |
+|---|---|---|
+| Bold red-on-black intro | "Who's Watching?" — Recruiter / Developer / Stalker / Adventurer | Hacker terminal UI with resume, LinkedIn, GitHub links |
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/449bfe25-12c5-419d-8f0b-85ee10e802c5) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Concept
 
-**Use your preferred IDE**
+Inspired by Netflix's profile selection UX. Visitors pick a role (Recruiter, Developer, Stalker, Adventurer) and get a tailored view of the portfolio. The main interface uses a live terminal aesthetic — scrolling system logs, CPU readouts, and process tables as a backdrop — to signal the kind of developer behind the screen.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Tech Stack
 
-Follow these steps:
+| Layer | Technology |
+|---|---|
+| Framework | React + TypeScript |
+| Build Tool | Vite |
+| Styling | Tailwind CSS |
+| UI Components | shadcn/ui |
+| Deployment | Vercel |
+| Built With | Lovable.dev |
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+---
+
+## Features
+
+- **Netflix-style splash screen** — click-to-enter with bold typographic intro
+- **Role-based profile selector** — four distinct visitor personas
+- **Hacker terminal background** — live-feel system log aesthetic
+- **Resume, LinkedIn, GitHub** — direct CTA links on the hero
+- **Fully responsive** — works across all screen sizes
+
+---
+
+## Getting Started
+
+```bash
+# Clone the repo
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate into the project
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Deployment
 
-**Use GitHub Codespaces**
+Deployed on **Vercel**. For custom domains, use [Netlify](https://docs.lovable.dev/tips-tricks/custom-domain/) as recommended by Lovable.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To redeploy via Lovable: open the [Lovable project](https://lovable.dev/projects/449bfe25-12c5-419d-8f0b-85ee10e802c5) → Share → Publish.
 
-## What technologies are used for this project?
+---
 
-This project is built with .
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/449bfe25-12c5-419d-8f0b-85ee10e802c5) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+MIT
